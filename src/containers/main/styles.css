@@ -1,0 +1,75 @@
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--grey-200);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 5px 30px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -17px;
+  background-color: var(--grey-400);
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+@media screen and (min-width: 600px) {
+  .container:nth-child(odd) .card {
+    flex-direction: row-reverse;
+  }
+
+  .container:nth-child(odd)::after {
+    right: -10px;
+  }
+
+  .container:nth-child(even) {
+    left: 50%;
+  }
+
+  .container:nth-child(even)::after {
+    left: -10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 41px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .container::after {
+    left: 31px;
+  }
+
+  .container:nth-child(odd) .card {
+    flex-direction: row;
+  }
+
+}

@@ -1,0 +1,10 @@
+.card {
+  padding: 5px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--grey-400);
+  display: flex;
+}
+
+.card .card-time {
+  margin-right: 10px;
+}
